@@ -17,21 +17,18 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./test.component.scss'],
 })
 export class TestComponent implements OnInit {
-  baseURL: 'http://321z122.mars1.mars-hosting.com/';
+
   constructor(private httpClient: HttpClient) {}
   private nodeApiUrl: string = "/api";
-  private API_URL= environment.API_URL;
   ngOnInit(): void {
     this.getData().subscribe((data) => {
       console.log(data);
       
     })
   }
-  // http://226b122.mars1.mars-hosting.com/api/test
-
   getData() {
     return this.httpClient
-      .get<any>(`${this.API_URL}/api/test`, {
+      .get<any>(`${this.nodeApiUrl}/api/test`, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           //'auth-token': this.getToken()

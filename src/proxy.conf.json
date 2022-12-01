@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "http://321z122.mars1.mars-hosting.com",
+      "target": "http://226b122.mars1.mars-hosting.com",
       "secure": false,
       "changeOrigin": true,
       "pathRewrite": {
