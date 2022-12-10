@@ -1,0 +1,21 @@
+<div class="vehicles-page">
+    <div>
+        <div *ngFor="let vehicle of vehicles" [routerLink]="'/vehicles/'+ vehicle.vhc_id" class="flex vehicle">
+            <div class="vehicle-item">
+                {{vehicle.vhc_id}}
+            </div>
+            <div class="vehicle-item">
+                {{vehicle.bra_name}}
+            </div>
+            <div class="vehicle-item">
+                {{vehicle.mod_name}}
+            </div>
+            <div class="vehicle-item">
+                {{vehicle.vhc_registration}}
+            </div>
+            <div class="vehicle-item">
+                {{vehicle.vhc_chassis_number}}
+            </div>
+        </div>
+    </div>
+</div>
