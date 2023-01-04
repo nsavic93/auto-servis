@@ -15,7 +15,7 @@ export class MainComponent implements OnInit {
     private loginService: LoginService,
     private router: Router
   ) {
-    // this.routerNavigate()
+    this.routerNavigate()
   }
 
   ngOnInit(): void {}

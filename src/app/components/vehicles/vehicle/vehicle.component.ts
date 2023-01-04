@@ -11,6 +11,8 @@ import { VehiclesService } from 'src/app/services/vehicles.service';
 })
 export class VehicleComponent implements OnInit {
   private routeSub: Subscription;
+  dataSource
+  displayedColumns = ['ser_id','ser_date','srt_name','ser_total_sum']
   vhc_id;
   vehicle: Vehicle = {
     bra_id: 0,
@@ -43,6 +45,17 @@ export class VehicleComponent implements OnInit {
     this.vehicleService.getVehicleById(this.vhc_id).subscribe((data) => {
       console.log(data);
       this.vehicle = data.vehicle;
+      this.getAllVehicleServices()
     });
+  }
+  getAllVehicleServices(){
+    this.vehicleService.getVehicleServices(this.vhc_id).subscribe((data) => {
+      console.log(data);
+      this.dataSource = data.services
+    })
+  }
+  test(ser_id){
+    console.log(ser_id);
+    
   }
 }

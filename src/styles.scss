@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    margin: 0;
+    background-color: #EFEFEF;
+}
 .flex {
     display: flex;
 }
@@ -18,3 +25,20 @@
 .nav-item:hover{
     cursor: pointer;
 }
+.nav{
+    display: flex;
+    background-color: #ffffff;
+    height: 50px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    justify-content: center;
+}
+.logout-div{
+    position: absolute;
+    right: 10px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -294,16 +294,22 @@
     }
   }
 </style>
-<div class="flex" *ngIf="test">
+<div class="flex" *ngIf="test" ngClass="nav">
   <div class="nav-item">
-    <button href="" routerLink="login" *ngIf="!isLoggedValue">Login</button>
+    <div href="" routerLink="main">Home</div>
   </div>
   <div class="nav-item">
-    <button (click)="logout()" *ngIf="isLoggedValue">Logout</button>
+    <div href="" routerLink="main">Contact</div>
   </div>
-  <div class="nav-item">
+  <div class="nav-item" *ngIf="!isLoggedValue">
+    <div href="" routerLink="login" >Login</div>
+  </div>
+  <div class="nav-item logout-div" *ngIf="isLoggedValue">
+    <div (click)="logout()" >Logout</div>
+  </div>
+  <!-- <div class="nav-item">
     <button (click)="back()">back</button>
-  </div>
+  </div> -->
 </div>
 
 <router-outlet *ngIf="test"></router-outlet>
