@@ -16,6 +16,8 @@ import { NotLoggedInAuthGuard } from './guard/NotLoggedInAuthGuard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
+import { ServiceComponent } from './components/vehicles/vehicle/service/service.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,8 @@ import {MatTableModule} from '@angular/material/table';
     LoginComponent,
     VehiclesComponent,
     VehicleComponent,
+    ServiceComponent,
+   
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatSlideToggleModule,MatTableModule],
   providers: [

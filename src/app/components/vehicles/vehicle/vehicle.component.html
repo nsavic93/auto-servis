@@ -48,7 +48,7 @@
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-        class="table-row" (click)="test(row.ser_id)"></tr>
+        class="table-row" [routerLink]="'/services/'+ row.ser_id" (click)="test(row.ser_id)"></tr>
     </table>
   </div>
 </div>

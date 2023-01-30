@@ -1,0 +1,170 @@
+<div class="service-page">
+    <div class="service-container">
+        <div *ngIf="service_type == 1" class="small-service">
+            <div class="small-service-items">
+                <div class="small-service-items-title">
+                    <h4>
+                        Mali servis
+                    </h4>
+                </div>
+                <div class="small-service-item">
+                    <label for="">Ulje u motoru:</label>
+                    <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_motor_oil == 'true'">
+                    <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_motor_oil == 'false'" alt="">
+                    <!-- <input type="checkbox" disabled [checked]="service.src_motor_oil == 'true'"> -->
+                </div>
+                <div class="small-service-item">
+                    <label for="">Filtera ulja:</label>
+                    <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_oil_filter == 'true'">
+                    <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_oil_filter == 'false'" alt="">
+                    <!-- <input type="checkbox" disabled [checked]="service.src_oil_filter == 'true'"> -->
+                </div>
+                <div class="small-service-item">
+                    <label for="">Filter vazduha:</label>
+                    <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_air_filter == 'true'">
+                    <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_air_filter == 'false'" alt="">
+                    <!-- <input type="checkbox" disabled [checked]="service.src_air_filter == 'true'"> -->
+                </div>
+                <div class="small-service-item">
+                    <label for="">Filter kabine:</label>
+                    <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_ac_filter == 'true'">
+                    <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_ac_filter == 'false'" alt="">
+                    <!-- <input type="checkbox" disabled [checked]="service.src_ac_filter == 'true'"> -->
+                </div>
+                <div class="small-service-item">
+                    <label for="">filter goriva:</label>
+                    <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_fuel_filter == 'true'">
+                    <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_fuel_filter == 'false'" alt="">
+                    <!-- <input type="checkbox" disabled [checked]="service.src_fuel_filter == 'true'"> -->
+                </div>
+                <div class="small-service-item" style="padding-top: 5px;">
+                    <label for="">Kilometraza:</label><p style="margin: 2px;">{{service.src_mileage}}</p>
+                </div>
+                <div class="small-service-item" style="padding-top: 5px;">
+                    <label for="">Datum:</label><p style="margin: 2px;">{{formatDateToLocal(service.src_date)}}</p>
+                </div>
+                <!-- <div class="small-service-item-description">
+                    <label for="">Opis:</label><p>{{service.ser_description}}</p>
+                </div> -->
+            </div>
+        </div>
+        <div *ngIf="service_type == 2" class="big-service">
+            <div class="big-service-items">
+              <div class="big-service-items-title">
+                <h4>
+                    Veliki servis
+                </h4>
+            </div>
+            <div class="big-service-item">
+                <label for="">Ulje u motoru:</label>
+                <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_motor_oil == 'true'">
+                <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_motor_oil == 'false'" alt="">
+                <!-- <input type="checkbox" disabled [checked]="service.src_motor_oil == 'true'"> -->
+            </div>
+            <div class="big-service-item">
+              <label for="">Filtera ulja:</label>
+              <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_oil_filter == 'true'">
+              <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_oil_filter == 'false'" alt="">
+              <!-- <input type="checkbox" disabled [checked]="service.src_oil_filter == 'true'"> -->
+          </div>
+          <div class="big-service-item">
+              <label for="">Filter vazduha:</label>
+              <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_air_filter == 'true'">
+              <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_air_filter == 'false'" alt="">
+              <!-- <input type="checkbox" disabled [checked]="service.src_air_filter == 'true'"> -->
+          </div>
+          <div class="big-service-item">
+              <label for="">Filter kabine:</label>
+              <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_ac_filter == 'true'">
+              <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_ac_filter == 'false'" alt="">
+              <!-- <input type="checkbox" disabled [checked]="service.src_ac_filter == 'true'"> -->
+          </div>
+          <div class="big-service-item">
+              <label for="">filter goriva:</label>
+              <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_fuel_filter == 'true'">
+              <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_fuel_filter == 'false'" alt="">
+              <!-- <input type="checkbox" disabled [checked]="service.src_fuel_filter == 'true'"> -->
+          </div>
+          <div class="big-service-item">
+            <label for="">Ulje u menjacu:</label>
+            <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_transmision_oil == 'true'">
+            <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_transmision_oil == 'false'" alt="">
+            <!-- <input type="checkbox" disabled [checked]="service.src_transmision_oil == 'true'"> -->
+          </div>
+          <div class="big-service-item">
+            <label for="">Set zupcenja:</label>
+            <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_zupc_belt == 'true'">
+            <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_zupc_belt == 'false'" alt="">
+            <!-- <input type="checkbox" disabled [checked]="service.src_zupc_belt == 'true'"> -->
+          </div>
+          <div class="big-service-item">
+            <label for="">Pk set:</label>
+            <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_pk_belt == 'true'">
+            <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_pk_belt == 'false'" alt="">
+            <!-- <input type="checkbox" disabled [checked]="service.src_pk_belt == 'true'"> -->
+          </div>
+          <div class="big-service-item">
+            <label for="">Tecnost u kocionom sistemu:</label>
+            <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_brake_fluid == 'true'">
+            <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_brake_fluid == 'false'" alt="">
+            <!-- <input type="checkbox" disabled [checked]="service.src_brake_fluid == 'true'"> -->
+          </div>
+            <div class="big-service-item">
+              <label for="">Tecnost u rashladnom sistemu:</label>
+              <img src="../../../../../assets/icons/icons8-checked-checkbox-64.png" alt="" *ngIf="service.src_antifreeze == 'true'">
+              <img src="../../../../../assets/icons/icons8-unchecked-checkbox-64.png" *ngIf="service.src_antifreeze == 'false'" alt="">
+              <!-- <input type="checkbox" disabled [checked]="service.src_antifreeze == 'true'"> -->
+            </div>
+          <div class="big-service-item" style="padding-top: 5px;">
+              <label for="">Kilometraza:</label><p style="margin: 2px;">{{service.src_mileage}}</p>
+          </div>
+          <div class="big-service-item" style="padding-top: 5px;">
+              <label for="">Datum:</label><p style="margin: 2px;">{{formatDateToLocal(service.src_date)}}</p>
+          </div>
+          </div>
+        </div>
+        <div *ngIf="service_type == 3">vanredni servis</div>
+        <div class="vehicle-table-container">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+              <!-- Position Column -->
+              <ng-container matColumnDef="art_product">
+                <th mat-header-cell *matHeaderCellDef> Proizvod </th>
+                <td mat-cell *matCellDef="let element"> {{element.art_product}} </td>
+              </ng-container>
+        
+              <!-- Name Column -->
+              <ng-container matColumnDef="art_name">
+                <th mat-header-cell *matHeaderCellDef> Naziv </th>
+                <td mat-cell *matCellDef="let element"> {{element.art_name}} </td>
+              </ng-container>
+        
+              <!-- Weight Column -->
+              <!-- <ng-container matColumnDef="itm_denomination">
+                <th mat-header-cell *matHeaderCellDef> Valuta </th>
+                <td mat-cell *matCellDef="let element"> {{element.itm_denomination}} </td>
+              </ng-container> -->
+        
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="itm_price">
+                <th mat-header-cell *matHeaderCellDef> Cena </th>
+                <td mat-cell *matCellDef="let element"> {{element.itm_price}} {{element.itm_denomination}} </td>
+              </ng-container>
+              <ng-container matColumnDef="itm_amount">
+                <th mat-header-cell *matHeaderCellDef> Kolicina </th>
+                <td mat-cell *matCellDef="let element"> {{element.itm_amount}} </td>
+              </ng-container>
+              <ng-container matColumnDef="ukupno">
+                <th mat-header-cell *matHeaderCellDef> Ukupno </th>
+                <td mat-cell *matCellDef="let element"> 2000 {{element.itm_denomination}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                class="table-row" [routerLink]="'/services/'+ row.ser_id" (click)="test(row.ser_id)"></tr>
+            </table>
+          </div>
+    </div>
+</div>
+

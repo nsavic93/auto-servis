@@ -52,6 +52,8 @@ export class VehicleComponent implements OnInit {
     this.vehicleService.getVehicleServices(this.vhc_id).subscribe((data) => {
       console.log(data);
       this.dataSource = data.services
+      
+      
     })
   }
   test(ser_id){

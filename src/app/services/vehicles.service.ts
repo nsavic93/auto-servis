@@ -63,7 +63,20 @@ export class VehiclesService {
       )
       .pipe(catchError(this.handleError));
   }
-
+  // http://226b122.mars1.mars-hosting.com/api/services/2
+  getServiceById(ser_id) {
+    return this.httpClient
+      .get<any>(
+        `${this.nodeApiUrl}/api/services/${ser_id}`,
+        {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            //'auth-token': this.getToken() 
+          }),
+        }
+      )
+      .pipe(catchError(this.handleError));
+  }
   getVehicleServices(vhc_id) {
     return this.httpClient
       .post<any>(

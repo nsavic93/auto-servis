@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { TestComponent } from './components/test/test.component';
+import { ServiceComponent } from './components/vehicles/vehicle/service/service.component';
 import { VehicleComponent } from './components/vehicles/vehicle/vehicle.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { LoggedInAuthGuard } from './guard/LoggedInAuthGuard';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate:[LoggedInAuthGuard] },
   { path: 'vehicles', component: VehiclesComponent, canActivate:[NotLoggedInAuthGuard] },
   { path: 'vehicles/:id', component: VehicleComponent, canActivate: [NotLoggedInAuthGuard] },
+  { path: 'services/:id', component: ServiceComponent, canActivate: [NotLoggedInAuthGuard] },
 ];
 
 @NgModule({

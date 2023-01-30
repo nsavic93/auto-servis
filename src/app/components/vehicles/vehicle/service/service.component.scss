@@ -1,0 +1,53 @@
+.service-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.service-container {
+    width: 90%;
+    display: flex;
+}
+
+.small-service-items, .big-service-items {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    // width: 60%;
+    padding: 10px;
+}
+
+.small-service-item, .big-service-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    img {
+        height: 30px;
+    }
+}
+
+.small-service-items-title, .big-service-items-title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    h4 {
+        font-size: 21px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+}
+
+.small-service-item-description {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    p {
+        height: 200px;
+    }
+}
+.vehicle-table-container{
+    width: 100%;
+    table{
+        width: 100%;
+    }
+}
