@@ -17,6 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 import { ServiceComponent } from './components/vehicles/vehicle/service/service.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { NotAdminAuthGuard } from './guard/NotAdminAuthGuard';
+import { CreateUserComponent } from './components/create-user/create-user.component';
+import { UsersComponent } from './components/admin-panel/users/users.component';
+import { UsersService } from './services/users.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,14 +33,19 @@ import { ServiceComponent } from './components/vehicles/vehicle/service/service.
     VehiclesComponent,
     VehicleComponent,
     ServiceComponent,
+    AdminPanelComponent,
+    CreateUserComponent,
+    UsersComponent,
    
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatSlideToggleModule,MatTableModule],
+  imports: [FormsModule,BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatSlideToggleModule,MatTableModule],
   providers: [
     LoginService,
     VehiclesService,
+    UsersService,
     LoggedInAuthGuard,
     NotLoggedInAuthGuard,
+    NotAdminAuthGuard
   ],
   bootstrap: [AppComponent],
 })

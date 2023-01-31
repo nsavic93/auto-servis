@@ -1,7 +1,7 @@
 <div *ngIf="!isLoggedValue" class="login-page">
     <div class="login-form">
-        <input class="login-input" type="text" name="" id="" placeholder="Username">
-        <input class="login-input" type="password" name="" id="" placeholder="Password">
+        <input [(ngModel)]="username" class="login-input" type="text"  placeholder="Username">
+        <input [(ngModel)]="password" class="login-input" type="password"  placeholder="Password">
         <button (click)="login()">Login</button>
     </div>
 </div>

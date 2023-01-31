@@ -11,7 +11,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class VehiclesService {
-  private nodeApiUrl: string = '/api';
+  // private nodeApiUrl: string = '/api';
+  private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
   token;
   user;
 

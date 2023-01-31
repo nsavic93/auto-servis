@@ -16,18 +16,44 @@ export class LoginService {
   //   isLogged = false
   isLoggedValue: Observable<any>;
   private isLoggedValueSubject = new BehaviorSubject<any>(null);
+
+  isAdminValue: Observable<any>;
+  private isAdminValueSubject = new BehaviorSubject<any>(null);
+
+
   constructor(private httpClient: HttpClient) {
     this.isLoggedValue = this.isLoggedValueSubject.asObservable();
+    this.isAdminValue = this.isAdminValueSubject.asObservable();
   }
 
-  private nodeApiUrl: string = '/api';
+  // private nodeApiUrl: string = '/api';
+  private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
   public setLoginStatus(value) {
     this.isLoggedValueSubject.next(value);
+  }
+  public setAdminStatus(value) {
+    this.isAdminValueSubject.next(value);
   }
   isLoggedIn(sid) {
     return this.httpClient
       .post<any>(
         `${this.nodeApiUrl}/api/isLoggedIn`,
+        {
+          sid: sid,
+        },
+        {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            //'auth-token': this.getToken()
+          }),
+        }
+      )
+      .pipe(catchError(this.handleError));
+  }
+  isAdmin(sid): Observable<any> {
+    return this.httpClient
+      .post<any>(
+        `${this.nodeApiUrl}/api/isAdmin`,
         {
           sid: sid,
         },
@@ -58,8 +84,6 @@ export class LoginService {
       .pipe(catchError(this.handleError));
   }
   logout(sid){
-    console.log(sid);
-    
     return this.httpClient
       .post<any>(
         `${this.nodeApiUrl}/api/logout`,

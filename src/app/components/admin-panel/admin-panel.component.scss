@@ -1,0 +1,25 @@
+.admin-panel {
+    display: flex;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.admin-panel-left-div {
+    width: 20%;
+}
+
+.admin-panel-right-div {
+    width: 80%;
+}
+
+.admin-panel-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-panel-nav-item {
+    padding: 2px 5px;
+    div:hover {
+        cursor: pointer;
+    }
+}

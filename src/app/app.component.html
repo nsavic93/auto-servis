@@ -301,6 +301,9 @@
   <div class="nav-item">
     <div href="" routerLink="main">Contact</div>
   </div>
+  <div class="nav-item" *ngIf="admin">
+    <div href="" routerLink="admin-panel">Admin</div>
+  </div>
   <div class="nav-item" *ngIf="!isLoggedValue">
     <div href="" routerLink="login" >Login</div>
   </div>
