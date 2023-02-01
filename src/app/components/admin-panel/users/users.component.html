@@ -1,49 +1,82 @@
 <div class="users-panel">
-    <div class="users-panel-title">
-        <h1>Users</h1>
-    </div>
-    <div class="users-panel-table-container">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 users-table">
+  <div class="users-panel-title">
+    <h1>Users</h1>
+    <div class="add-new-button" (click)="openDialogForAddNewUser()"><div
+        class="add-new-btn"></div></div>
+  </div>
+  <div class="users-panel-table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8
+      users-table">
 
-            <!--- Note that these columns can be defined in any order.
+      <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->
-          
-            <!-- Position Column -->
-            <ng-container matColumnDef="usr_id">
-              <th mat-header-cell *matHeaderCellDef> ID </th>
-              <td mat-cell *matCellDef="let element"> {{element.usr_id}} </td>
-            </ng-container>
-          
-            <!-- Name Column -->
-            <ng-container matColumnDef="usr_name">
-              <th mat-header-cell *matHeaderCellDef> Ime i prezime </th>
-              <td mat-cell *matCellDef="let element"> {{element.usr_firstname + ' ' + element.usr_lastname}} </td>
-            </ng-container>
-          
-            <!-- Weight Column -->
-            <ng-container matColumnDef="usr_username">
-              <th mat-header-cell *matHeaderCellDef> Username </th>
-              <td mat-cell *matCellDef="let element"> {{element.usr_username}} </td>
-            </ng-container>
-          
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="usr_adress">
-              <th mat-header-cell *matHeaderCellDef> Adresa </th>
-              <td mat-cell *matCellDef="let element"> {{element.usr_adress}} </td>
-            </ng-container>
+      <!-- Position Column -->
+      <ng-container matColumnDef="usr_id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.usr_id}} </td>
+      </ng-container>
 
-            <ng-container matColumnDef="usr_phone">
-                <th mat-header-cell *matHeaderCellDef> Telefon </th>
-                <td mat-cell *matCellDef="let element"> {{element.usr_phone}} </td>
-              </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="usr_name">
+        <th mat-header-cell *matHeaderCellDef> Ime i prezime </th>
+        <td mat-cell *matCellDef="let element"> {{element.usr_firstname + ' ' +
+          element.usr_lastname}} </td>
+      </ng-container>
 
-              <ng-container matColumnDef="usr_role">
-                <th mat-header-cell *matHeaderCellDef> Rola </th>
-                <td mat-cell *matCellDef="let element"> {{element.rol_role}} </td>
-              </ng-container>
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row" [routerLink]="'/vehicles/'+ row.vhc_id" (click)="test(row.vhc_id)"></tr>
-          </table>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="usr_username">
+        <th mat-header-cell *matHeaderCellDef> Username </th>
+        <td mat-cell *matCellDef="let element"> {{element.usr_username}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="usr_adress">
+        <th mat-header-cell *matHeaderCellDef> Adresa </th>
+        <td mat-cell *matCellDef="let element"> {{element.usr_adress}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="usr_phone">
+        <th mat-header-cell *matHeaderCellDef> Telefon </th>
+        <td mat-cell *matCellDef="let element"> {{element.usr_phone}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="usr_role">
+        <th mat-header-cell *matHeaderCellDef> Rola </th>
+        <td mat-cell *matCellDef="let element" style="position: relative;"> {{element.rol_role}}  <div class="delete-div"><div class="delete-icon"></div></div> </td>
+       
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        class="table-row" [routerLink]="'/vehicles/'+ row.vhc_id"
+        (click)="test(row.vhc_id)"></tr>
+    </table>
+  </div>
+</div>
+
+
+
+<div class="add-new-user-dialog-container" *ngIf="addNewUserDialog">
+  <div class="add-new-user-form">
+    <div class="close-dialog-button" (click)="closeDialogForAddNewUser()"><div
+        class="close-dialog-btn"></div>
     </div>
+    <div class="add-new-user-form-title">
+      <h2>Dodaj novog korisnika</h2>
+    </div>
+    <div class="add-new-form-items">
+      <input [(ngModel)]="firstname" placeholder="Ime" type="text" class="new-user-form-item">
+      <input [(ngModel)]="lastname" placeholder="Prezime" type="text" class="new-user-form-item">
+      <input [(ngModel)]="username" placeholder="Username" type="text" class="new-user-form-item">
+      <input [(ngModel)]="password" placeholder="Password" type="text" class="new-user-form-item">
+      <input [(ngModel)]="adress" placeholder="Adresa" type="text" class="new-user-form-item">
+      <input [(ngModel)]="phone" placeholder="Telefon" type="text" class="new-user-form-item">
+      <div class="new-user-form-item-cb">
+        <label for="">Admin</label>
+        <input [(ngModel)]="isAdmin" type="checkbox">
+      </div>
+    </div>
+
+    <button (click)="saveNewUser()">Sacuvaj</button>
+  </div>
 </div>

@@ -21,21 +21,21 @@ const routes: Routes = [
   { path: 'vehicles', component: VehiclesComponent, canActivate:[NotLoggedInAuthGuard] },
   { path: 'vehicles/:id', component: VehicleComponent, canActivate: [NotLoggedInAuthGuard] },
   { path: 'services/:id', component: ServiceComponent, canActivate: [NotLoggedInAuthGuard] },
-  { path: 'admin-panel', component: AdminPanelComponent, canActivate: [NotAdminAuthGuard], children: [
+  { path: 'admin-panel', component: AdminPanelComponent, canActivate: [NotAdminAuthGuard,NotLoggedInAuthGuard], children: [
     {
       path: '',
       component: UsersComponent,
-      canActivate: [NotAdminAuthGuard]
+      canActivate: [NotAdminAuthGuard, NotLoggedInAuthGuard]
     },
     {
       path: 'users',
       component: UsersComponent,
-      canActivate: [NotAdminAuthGuard]
+      canActivate: [NotAdminAuthGuard, NotLoggedInAuthGuard]
     },
     {
       path: 'create-user',
       component: CreateUserComponent,
-      canActivate: [NotAdminAuthGuard]
+      canActivate: [NotAdminAuthGuard, NotLoggedInAuthGuard]
     },
   ] },
 ];

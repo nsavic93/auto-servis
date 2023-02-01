@@ -6,13 +6,15 @@ import {
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class VehiclesService {
   // private nodeApiUrl: string = '/api';
-  private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
+  // private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
+  private nodeApiUrl: string =  environment.API_URL;
   token;
   user;
 
