@@ -166,7 +166,9 @@ input:-webkit-autofill:active {
 
     input {}
 }
-
+.fullscreen-display-none{
+    display: none;
+}
 @media screen and (max-width: 575px) {
 
     .users-panel-title {

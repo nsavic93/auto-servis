@@ -28,8 +28,8 @@ export class LoginService {
   }
 
   // private nodeApiUrl: string = '/api';
-  // private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
-  private nodeApiUrl: string =  environment.API_URL;
+  private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
+  // private nodeApiUrl: string =  environment.API_URL;
   public setLoginStatus(value) {
     this.isLoggedValueSubject.next(value);
   }

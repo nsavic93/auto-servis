@@ -37,7 +37,7 @@
 
       <ng-container matColumnDef="usr_phone">
         <th mat-header-cell *matHeaderCellDef> Telefon </th>
-        <td mat-cell *matCellDef="let element" style="position: relative;"> {{element.usr_phone}} <div class="delete-div" (click)="deleteUserById(element.usr_id)"><div class="delete-icon"></div></div> </td>
+        <td mat-cell *matCellDef="let element" style="position: relative;"> {{element.usr_phone}} <div class="delete-div fullscreen-display-none" (click)="deleteUserById(element.usr_id)"><div class="delete-icon"></div></div> </td>
       </ng-container>
 
       <ng-container matColumnDef="usr_role" >

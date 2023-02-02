@@ -13,8 +13,8 @@ import { environment } from 'src/environments/environment';
 })
 export class VehiclesService {
   // private nodeApiUrl: string = '/api';
-  // private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
-  private nodeApiUrl: string =  environment.API_URL;
+  private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
+  // private nodeApiUrl: string =  environment.API_URL;
   token;
   user;
 

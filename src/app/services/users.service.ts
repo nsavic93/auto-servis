@@ -12,9 +12,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class UsersService {
-  // private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
+  private nodeApiUrl: string = 'http://226b122.mars1.mars-hosting.com';
   // private nodeApiUrl: string = '/api';
-  private nodeApiUrl: string = environment.API_URL;
+  // private nodeApiUrl: string = environment.API_URL;
   token;
   user;
 
