@@ -1,0 +1,53 @@
+.mobile-nav {
+    display: none;
+}
+
+.bars-icon,
+.close-icon {
+    display: none;
+
+}
+
+@media screen and (max-width: 575px) {
+    
+    .desktop {
+        display: none;
+    }
+
+    svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+    }
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        align-items: center;
+        height: 50vh;
+        background-color: #ffffff;
+        padding-top: 40px;
+        z-index: 999;
+        .nav-item{
+            margin-bottom: 10px;
+        }
+    }
+
+    .close-icon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 26px;
+        display: flex;
+    }
+
+    .bars-icon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 26px;
+        display: flex;
+    }
+}

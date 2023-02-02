@@ -23,6 +23,8 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { UsersComponent } from './components/admin-panel/users/users.component';
 import { UsersService } from './services/users.service';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,7 @@ import { FormsModule } from '@angular/forms';
     UsersComponent,
    
   ],
-  imports: [FormsModule,BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatSlideToggleModule,MatTableModule],
+  imports: [FormsModule,BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatSlideToggleModule,MatTableModule,FontAwesomeModule, CommonModule],
   providers: [
     LoginService,
     VehiclesService,

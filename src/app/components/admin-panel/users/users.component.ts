@@ -46,4 +46,13 @@ export class UsersComponent implements OnInit {
 
     })
   }
+  deleteUserById(usr_id) {
+    this.users.deleteUser(usr_id).subscribe((data) => {
+      console.log(data);
+      this.getUsers()
+    }, (err) => {
+      console.log(err);
+
+    })
+  }
 }

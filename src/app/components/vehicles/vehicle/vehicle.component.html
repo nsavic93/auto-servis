@@ -7,13 +7,13 @@
         <h2>{{ vehicle.bra_name }} {{ vehicle.mod_name }}</h2>
       </div>
       <div class="info">
-        <label for="">Br. sasije</label>
-        <h2>{{ vehicle.vhc_chassis_number }}</h2>
-      </div>
-      <div class="info">
         <label for="">Registracija</label>
         <h2>{{ vehicle.vhc_registration }}</h2>
       </div>
+    </div>
+    <div class="info">
+      <label for="">Br. sasije</label>
+      <h2>{{ vehicle.vhc_chassis_number }}</h2>
     </div>
   </div>
   <div class="vehicle-table-container">
@@ -48,7 +48,8 @@
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-        class="table-row" [routerLink]="'/services/'+ row.ser_id" (click)="test(row.ser_id)"></tr>
+        class="table-row" [routerLink]="'/services/'+ row.ser_id"
+        (click)="test(row.ser_id)"></tr>
     </table>
   </div>
 </div>

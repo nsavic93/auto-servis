@@ -8,7 +8,7 @@ import {MatTableModule} from '@angular/material/table';
   styleUrls: ['./vehicles.component.scss'],
 })
 export class VehiclesComponent implements OnInit {
-  displayedColumns: string[] = ['vhc_id', 'bra_name', 'mod_name', 'vhc_registration', 'vhc_chassis_number'];
+  displayedColumns: string[] = ['bra_name', 'mod_name', 'vhc_registration', 'vhc_chassis_number'];
   dataSource
   constructor(
     private vehicleService: VehiclesService,

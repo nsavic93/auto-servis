@@ -21,6 +21,25 @@ export class UsersService {
   constructor(private httpClient: HttpClient) {
 
   }
+  deleteUser(usr_id){
+    let sid = localStorage.getItem('token')
+    return this.httpClient
+      .delete<any>(
+        `${this.nodeApiUrl}/api/users`,
+        
+        {
+          params: {
+            sid: sid,
+            usr_id: usr_id
+          },
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            //'auth-token': this.getToken()
+          }),
+        }
+      )
+      .pipe(catchError(this.handleError));
+  }
   createNewUser(firstname, lastname, username, password, adress, phone, isAdmin) {
     let sid = localStorage.getItem('token')
     return this.httpClient

@@ -288,13 +288,36 @@
   }
 
   @media screen and (max-width: 575px) {
+    .desktop{
+      display: none;
+    }
     svg#rocket-smoke {
       display: none;
       visibility: hidden;
     }
   }
 </style>
-<div class="flex" *ngIf="test" ngClass="nav">
+<fa-icon [icon]="faBars" class="bars-icon" (click)="openMobileNav()"></fa-icon>
+
+<div class="mobile-nav" *ngIf="test && mobileNav">
+  <fa-icon [icon]="faCircleXmark" class="close-icon" (click)="closeMobileNav()"></fa-icon>
+  <div class="nav-item">
+    <div (click)="closeMobileNav()"  href="" routerLink="main">Home</div>
+  </div>
+  <div class="nav-item">
+    <div (click)="closeMobileNav()"  href="" routerLink="main">Contact</div>
+  </div>
+  <div class="nav-item" *ngIf="admin">
+    <div (click)="closeMobileNav()"  href="" routerLink="admin-panel">Admin</div>
+  </div>
+  <div class="nav-item" *ngIf="!isLoggedValue">
+    <div (click)="closeMobileNav()"  href="" routerLink="login" >Login</div>
+  </div>
+  <div class="nav-item" *ngIf="isLoggedValue">
+    <div  (click)="logout();closeMobileNav()" >Logout</div>
+  </div>
+</div>
+<div class="flex nav desktop" *ngIf="test">
   <div class="nav-item">
     <div href="" routerLink="main">Home</div>
   </div>

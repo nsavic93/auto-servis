@@ -23,3 +23,12 @@
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 575px) {
+    .admin-panel-left-div {
+        display: none;
+    }
+    .admin-panel-right-div {
+        width: 100%;
+    }
+}

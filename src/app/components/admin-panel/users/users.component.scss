@@ -69,7 +69,7 @@
 .delete-div {
     position: absolute;
     right: 5px;
-    top: calc(50% - 13px);
+    top: calc(50% - 15px);
 }
 
 .delete-icon {
@@ -165,4 +165,28 @@ input:-webkit-autofill:active {
     padding-top: 10px;
 
     input {}
+}
+
+@media screen and (max-width: 575px) {
+
+    .users-panel-title {
+        h1 {
+            margin-left: 10px;
+            font-weight: 500;
+        }
+    }
+
+    .add-new-button {
+        right: 25px;
+    }
+
+    .add-new-user-form {
+        // padding: 30px 50px;
+        margin: 0 100px;
+    }
+
+    .add-new-form-items {
+        display: flex !important;
+        flex-direction: column;
+    }
 }

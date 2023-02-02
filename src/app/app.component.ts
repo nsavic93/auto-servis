@@ -2,16 +2,24 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { Location } from '@angular/common';
+import { library, icon } from '@fortawesome/fontawesome-svg-core'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  faCoffee = faCoffee;
+  faBars = faBars
+  faCircleXmark = faCircleXmark
   title = 'auto-servis';
   test = false;
   isLoggedValue = false;
   admin = false
+  mobileNav = false
   constructor(private loginService: LoginService, private router: Router, private _location: Location) {
     this.checkLoginStatus();
     this.loginService.isLoggedValue.subscribe((data) => {
@@ -75,5 +83,11 @@ export class AppComponent {
   }
   back() {
     this._location.back();
+  }
+  openMobileNav(){
+    this.mobileNav = true;
+  }
+  closeMobileNav(){
+    this.mobileNav = false;
   }
 }
