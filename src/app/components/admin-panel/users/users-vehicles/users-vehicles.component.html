@@ -1,0 +1,57 @@
+<div class="vehicles-page">
+    
+    <div class="vehicle-table-container">
+        <!-- <div *ngFor="let vehicle of vehicles" [routerLink]="'/vehicles/'+ vehicle.vhc_id" class="flex vehicle">
+            <div class="vehicle-item">
+                {{vehicle.vhc_id}}
+            </div>
+            <div class="vehicle-item">
+                {{vehicle.bra_name}}
+            </div>
+            <div class="vehicle-item">
+                {{vehicle.mod_name}}
+            </div>
+            <div class="vehicle-item">
+                {{vehicle.vhc_registration}}
+            </div>
+            <div class="vehicle-item">
+                {{vehicle.vhc_chassis_number}}
+            </div>
+        </div> -->
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 vehicles-table">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="bra_name">
+              <th mat-header-cell *matHeaderCellDef> Marka </th>
+              <td mat-cell *matCellDef="let element"> {{element.bra_name}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="mod_name">
+              <th mat-header-cell *matHeaderCellDef> Model </th>
+              <td mat-cell *matCellDef="let element"> {{element.mod_name}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="vhc_registration">
+              <th mat-header-cell *matHeaderCellDef> Registracija </th>
+              <td mat-cell *matCellDef="let element"> {{element.vhc_registration}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="vhc_chassis_number">
+                <th mat-header-cell *matHeaderCellDef class="mobile-show"> Br. Sasije </th>
+                <td mat-cell *matCellDef="let element" class="mobile-show"> {{element.vhc_chassis_number}} </td>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"  (click)="test(row.vhc_id)"></tr>
+          </table>
+    </div>
+    
+</div>

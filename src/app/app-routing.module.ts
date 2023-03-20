@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { UserVehicleComponent } from './components/admin-panel/users/users-vehicles/user-vehicle/user-vehicle.component';
+import { UsersVehiclesComponent } from './components/admin-panel/users/users-vehicles/users-vehicles.component';
 import { UsersComponent } from './components/admin-panel/users/users.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { LoginComponent } from './components/login/login.component';
@@ -22,19 +24,30 @@ const routes: Routes = [
   { path: 'vehicles/:id', component: VehicleComponent, canActivate: [NotLoggedInAuthGuard] },
   { path: 'services/:id', component: ServiceComponent, canActivate: [NotLoggedInAuthGuard] },
   { path: 'admin-panel', component: AdminPanelComponent, canActivate: [NotAdminAuthGuard,NotLoggedInAuthGuard], children: [
-    {
-      path: '',
-      component: UsersComponent,
-      canActivate: [NotAdminAuthGuard, NotLoggedInAuthGuard]
-    },
+    
     {
       path: 'users',
       component: UsersComponent,
       canActivate: [NotAdminAuthGuard, NotLoggedInAuthGuard]
     },
     {
+      path: 'users/:id',
+      component: UsersVehiclesComponent,
+      canActivate: [NotAdminAuthGuard, NotLoggedInAuthGuard]
+    },
+    {
+      path: 'user-vehicle/:id',
+      component: UserVehicleComponent,
+      canActivate: [NotAdminAuthGuard, NotLoggedInAuthGuard]
+    },
+    {
       path: 'create-user',
       component: CreateUserComponent,
+      canActivate: [NotAdminAuthGuard, NotLoggedInAuthGuard]
+    },
+    {
+      path: '**',
+      component: UsersComponent,
       canActivate: [NotAdminAuthGuard, NotLoggedInAuthGuard]
     },
   ] },

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -17,9 +18,12 @@ export class UsersComponent implements OnInit {
   adress: string = ''
   phone: string = ''
   isAdmin: boolean = false
-  constructor(private users: UsersService) { }
+  constructor(private users: UsersService,private toastr: ToastrService) { }
+
 
   ngOnInit(): void {
+    console.log('bnnn');
+    
     this.getUsers()
   }
   getUsers() {
@@ -36,10 +40,14 @@ export class UsersComponent implements OnInit {
     this.addNewUserDialog = false
   }
   saveNewUser() {
+    console.log('save');
+    
     this.users.createNewUser(this.firstname, this.lastname, this.username, this.password, this.adress, this.phone, this.isAdmin).subscribe((data) => {
       if (data.msg == "OK") {
         this.getUsers()
         this.addNewUserDialog = false
+      }else{
+        this.showError('param')
       }
     }, (err) => {
       console.log(err);
@@ -54,5 +62,17 @@ export class UsersComponent implements OnInit {
       console.log(err);
 
     })
+  }
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
+  }
+  showError(param) {
+    this.toastr.error('EEE NEEEES VALA!', 'PAJSERU!');
+  }
+  testLog(id){
+    console.log(id);
+    
+    console.log("ASD");
+    
   }
 }

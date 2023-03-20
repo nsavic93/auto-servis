@@ -25,6 +25,9 @@ import { UsersService } from './services/users.service';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { UsersVehiclesComponent } from './components/admin-panel/users/users-vehicles/users-vehicles.component';
+import { UserVehicleComponent } from './components/admin-panel/users/users-vehicles/user-vehicle/user-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +41,11 @@ import { CommonModule } from '@angular/common';
     AdminPanelComponent,
     CreateUserComponent,
     UsersComponent,
+    UsersVehiclesComponent,
+    UserVehicleComponent,
    
   ],
-  imports: [FormsModule,BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatSlideToggleModule,MatTableModule,FontAwesomeModule, CommonModule],
+  imports: [FormsModule,BrowserModule,ToastrModule.forRoot(), AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatSlideToggleModule,MatTableModule,FontAwesomeModule, CommonModule],
   providers: [
     LoginService,
     VehiclesService,

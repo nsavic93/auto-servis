@@ -46,8 +46,8 @@
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-        class="table-row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="row.usr_id" (click)="testLog(row.usr_id)"
+        class="table-row table-row-cursor-pionter"></tr>
     </table>
   </div>
 </div>
