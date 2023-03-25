@@ -1,0 +1,47 @@
+.vehicle-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vehicle-table-container {
+    width: 80%;
+
+    table {
+        width: 100%;
+    }
+}
+
+.table-row:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-page-vehicle-information {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    // margin-top: 100px;
+}
+
+.vehicle-information {
+    display: flex;
+
+}
+
+.info {
+    margin: 0px 10px;
+}
+
+@media screen and (max-width: 575px) {
+
+    .vehicle-information {
+        flex-wrap: wrap;
+
+        .info {
+            width: 50%;
+            margin: 0;
+        }
+    }
+
+}

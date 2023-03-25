@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
 * {
     font-family: 'Poppins', sans-serif;
 }
@@ -62,6 +64,61 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.add-new-button {
+    position: absolute;
+    right: 0;
+    background-color: #757575;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 50px;
+    border-radius: 50%;
+}
+
+.add-new-btn {
+    background-image: url('./assets/icons/icons8-plus-math-30.png');
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: center;
+
+}
+
+.add-new-button:hover {
+    cursor: pointer;
+}
+
+.close-dialog-button {
+    position: absolute;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+}
+
+.close-dialog-button:hover {
+    cursor: pointer;
+}
+
+.vehicles-brands-select {
+    .ng-dropdown-panel .scroll-host {
+        max-height: 100px !important;
+    }
+}
+
+.close-dialog-btn {
+    background-image: url('./assets/icons/icons8-macos-close-32.png');
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: center;
 }
 
 @media screen and (max-width: 575px) {

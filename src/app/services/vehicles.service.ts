@@ -80,6 +80,32 @@ export class VehiclesService {
       )
       .pipe(catchError(this.handleError));
   }
+  getCarBrands() {
+    return this.httpClient
+      .get<any>(
+        `${this.nodeApiUrl}/api/carBrands`,
+        {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            //'auth-token': this.getToken() 
+          }),
+        }
+      )
+      .pipe(catchError(this.handleError));
+  }
+  getCarModelsById(bra_id) {
+    return this.httpClient
+      .get<any>(
+        `${this.nodeApiUrl}/api/carModels?bra_id=${bra_id}`,
+        {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            //'auth-token': this.getToken() 
+          }),
+        }
+      )
+      .pipe(catchError(this.handleError));
+  }
   getVehicleServices(vhc_id) {
     return this.httpClient
       .post<any>(

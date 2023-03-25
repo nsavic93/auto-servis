@@ -15,20 +15,27 @@ import { LoggedInAuthGuard } from './guard/LoggedInAuthGuard';
 import { NotLoggedInAuthGuard } from './guard/NotLoggedInAuthGuard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { ServiceComponent } from './components/vehicles/vehicle/service/service.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { NotAdminAuthGuard } from './guard/NotAdminAuthGuard';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { UsersComponent } from './components/admin-panel/users/users.component';
 import { UsersService } from './services/users.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { UsersVehiclesComponent } from './components/admin-panel/users/users-vehicles/users-vehicles.component';
 import { UserVehicleComponent } from './components/admin-panel/users/users-vehicles/user-vehicle/user-vehicle.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgSelectModule } from '@ng-select/ng-select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,9 +50,29 @@ import { UserVehicleComponent } from './components/admin-panel/users/users-vehic
     UsersComponent,
     UsersVehiclesComponent,
     UserVehicleComponent,
-   
+    ConfirmationDialogComponent,
   ],
-  imports: [FormsModule,BrowserModule,ToastrModule.forRoot(), AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatSlideToggleModule,MatTableModule,FontAwesomeModule, CommonModule],
+  imports: [
+    
+    BrowserModule,
+    MatDialogModule,
+    ToastrModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatTableModule,
+    FontAwesomeModule,
+    CommonModule,
+    NgxMatSelectSearchModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    NgSelectModule
+  ],
   providers: [
     LoginService,
     VehiclesService,
@@ -56,4 +83,4 @@ import { UserVehicleComponent } from './components/admin-panel/users/users-vehic
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,1 +1,56 @@
-<p>user-vehicle works!</p>
+<div class="vehicle-page">
+    <div class="vehicle-page-vehicle-information">
+      <h1>Vozilo</h1>
+      <div class="vehicle-information">
+        <div class="info">
+          <label for="">Vozilo</label>
+          <h2>{{ vehicle.bra_name }} {{ vehicle.mod_name }}</h2>
+        </div>
+        <div class="info">
+          <label for="">Registracija</label>
+          <h2>{{ vehicle.vhc_registration }}</h2>
+        </div>
+      </div>
+      <div class="info">
+        <label for="">Br. sasije</label>
+        <h2>{{ vehicle.vhc_chassis_number }}</h2>
+      </div>
+    </div>
+    <div class="vehicle-table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+        <!-- Position Column -->
+        <ng-container matColumnDef="ser_id">
+          <th mat-header-cell *matHeaderCellDef> Servis ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.ser_id}} </td>
+        </ng-container>
+  
+        <!-- Name Column -->
+        <ng-container matColumnDef="ser_date">
+          <th mat-header-cell *matHeaderCellDef> Datum </th>
+          <td mat-cell *matCellDef="let element"> {{element.ser_date}} </td>
+        </ng-container>
+  
+        <!-- Weight Column -->
+        <ng-container matColumnDef="srt_name">
+          <th mat-header-cell *matHeaderCellDef> Tip servisa </th>
+          <td mat-cell *matCellDef="let element"> {{element.srt_name}} </td>
+        </ng-container>
+  
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="ser_total_sum">
+          <th mat-header-cell *matHeaderCellDef> Suma </th>
+          <td mat-cell *matCellDef="let element"> {{element.ser_total_sum}} </td>
+        </ng-container>
+  
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+          class="table-row" [routerLink]="'/services/'+ row.ser_id"
+          (click)="test(row.ser_id)"></tr>
+      </table>
+    </div>
+  </div>
+  
